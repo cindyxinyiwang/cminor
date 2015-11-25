@@ -1,0 +1,4 @@
+// invalid string
+b: string = "good
+moring";
+

@@ -1,0 +1,6 @@
+// illegal comments
+
+/* '\n' \
+
+\\\\ */
+*/

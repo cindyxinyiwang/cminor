@@ -1,0 +1,12 @@
+// miscs
+
+123variable = 120;
+b43 : array[4] string = {"hello", 'p', "string", "if"};
+while (i < 0) {
+	foreach (b : b43) {
+		return
+	}
+}
+
+a : char = '\\'
+

@@ -1,0 +1,5 @@
+// invalid char
+i: string = "myStr"
+'hello'
+
+

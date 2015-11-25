@@ -1,0 +1,10 @@
+// miscs
+
+print "this \0 hello", temp, "hello", '\n';
+++----
+print temp, "hello\n world", "hello", '\\', temp;
+print '\\', '\/';
+
+myFunc: function void (x: string, y: string, z: integer, m: boolean, t: char) = {
+	
+}

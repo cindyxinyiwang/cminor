@@ -1,0 +1,32 @@
+b: boolean;
+x: integer = 3;
+b = x < y;
+c: char = 'x'
+if(c=='a')
+// operators
+x++
+y++
+++x
+++y
+m = x+y;
+m = x-y;
+m = (x+y)%x;
+m = (x*y/z)^2
+return x == y
+x < y
+x <= y
+x > y
+x >= y
+x == y
+149 != y
+x && y
+x || 1
+x = 3;
+-5
+-(-5)
++++++
+++++++
+=====
+====
+-----
+----

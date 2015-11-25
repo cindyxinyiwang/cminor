@@ -1,0 +1,22 @@
+xwang
+
+Total 102%
+
+Instructor tests (29/30)
+bad10
+
+
+Student tests (18/20)ls
+bad6 -- These are legal comments
+bad5 -- This should still scan even if it shouldn't parse
+
+Extra credit +5
+bad3
+bad4
+bad7
+bad8
+good1
+
+
+Overall program structure (50/50)
+Program is formatted well overall, but the main method should be in its own file and more compartmentalized, that way incorporating a parser will be simple

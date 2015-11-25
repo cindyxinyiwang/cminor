@@ -1,0 +1,33 @@
+//statements
+print "this is a test file", temp, "degrees\n";
+
+a: array [5] integer;
+b: array [5] boolean;
+b: array [5] char;
+b: array [5] string;
+b: array [5] boolean = {false, true};
+x: integer = 9223372036854775807;
+9223372036854675807
+y: boolean = false;
+myString: string = "hello cminor\n";
+myChar: char = '\\';
+
+square: function integer ( x: integer ) = {
+	return x^2;
+}
+
+printarray: function void ( a: array [] integer, size: integer ) = {
+	i: integer;
+	for( i=0;i<size;i++) {
+		print a[i], "\n";
+	}
+	while (i < 0) {
+		i--;
+	}
+}
+
+puts: function void ( s: string );
+
+main: function integer () = {
+	puts("hello world");
+}

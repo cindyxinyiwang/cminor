@@ -1,0 +1,4 @@
+// illegal char
+
+a : char = '
+'
