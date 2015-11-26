@@ -1,0 +1,6 @@
+// print statment
+
+a: function void () = {
+	
+	print ,a, b, c;
+}

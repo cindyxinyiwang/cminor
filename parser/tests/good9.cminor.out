@@ -1,0 +1,13 @@
+printarray: function void ( a: array [] integer, size: integer ) = {
+	print;
+	return;
+} : function void(a: array [] integer, size: integer ) = {
+	print;
+	return;
+}: array [] integer,size: integer ) = {
+	print;
+	return;
+}: integer)= {
+	print ;
+	return ;
+}

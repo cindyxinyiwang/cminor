@@ -1,0 +1,22 @@
+b: function void () = {
+	x = 1;
+	x = true;
+	x = false;
+	x = "hello \\n \n world";
+	x = '\\';
+	x = 'x';
+	m: array [] integer = {1, 2, 3, 4};
+	m: array [4] boolean = {true, false, true, true};
+	m: array [] array [] integer = {{1, 2}, {2, 3}, {4, 5}};
+} : function void()= {
+	(x ==1);
+	(x ==true);
+	(x ==false);
+	(x =="hello \\n \n world");
+	(x =='\');
+	(x =='x');
+	m: array [] integer = {1, 2, 3, 4}; : array [] integer={1,2,3,4};
+	m: array [4] boolean = {true, false, true, true}; : array [4] boolean={true,false,true,true};
+	m: array [] array [] integer = {{1, 2}, {2, 3}, {4, 5}}; : array [] array [] integer={{1,2},{2,3},{4,5}};
+
+}

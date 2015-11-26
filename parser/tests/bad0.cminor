@@ -1,0 +1,7 @@
+// valid in scanning, invalid in parsing
+
+a: function integer () = {
+	i = i + j;
+	;
+}
+

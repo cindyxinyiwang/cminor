@@ -1,0 +1,69 @@
+hello1: function integer () = {
+	print "hello world";
+} : function integer()= {
+	print "hello world";
+}
+x: integer = 1; : integer=1;
+y: boolean = true; : boolean=true;
+random: function array [] integer (x: integer, y: integer) = {
+	z: integer = x+y;
+	a: array [3] integer = {1, 2,3};
+	return a;
+} : function array [] integer(x: integer, y: integer) = {
+	z: integer = x+y;
+	a: array [3] integer = {1, 2,3};
+	return a;
+}
+
+func: function array [10] boolean (m: boolean, n: array [10] integer, y: integer) = {
+	print m, n, y;
+	
+}
+
+proto: function void (i: integer, j: boolean, k: string, p: char);
+: integer,y: integer) = {
+	z: integer = x+y;
+	a: array [3] integer = {1, 2,3};
+	return a;
+}
+
+func: function array [10] boolean (m: boolean, n: array [10] integer, y: integer) = {
+	print m, n, y;
+	
+}
+
+proto: function void (i: integer, j: boolean, k: string, p: char);
+: integer)= {
+	z: integer = x+y; : integer=(x++y;);
+	a: array [3] integer = {1, 2,3}; : array [3] integer={1,2,3};
+	return a;;
+}
+func: function array [10] boolean (m: boolean, n: array [10] integer, y: integer) = {
+	print m, n, y;
+	
+} : function array [10] boolean(m: boolean, n: array [10] integer, y: integer) = {
+	print m, n, y;
+	
+}
+
+proto: function void (i: integer, j: boolean, k: string, p: char);
+: boolean,n: array [10] integer, y: integer) = {
+	print m, n, y;
+	
+}
+
+proto: function void (i: integer, j: boolean, k: string, p: char);
+: array [10] integer,y: integer) = {
+	print m, n, y;
+	
+}
+
+proto: function void (i: integer, j: boolean, k: string, p: char);
+: integer)= {
+	print m,,n,,y;;
+}
+proto: function void (i: integer, j: boolean, k: string, p: char); : function void(i: integer, j: boolean, k: string, p: char);
+: integer,j: boolean, k: string, p: char);
+: boolean,k: string, p: char);
+: string,p: char);
+: character);

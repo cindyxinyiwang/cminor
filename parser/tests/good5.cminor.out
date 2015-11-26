@@ -1,0 +1,73 @@
+if_else: function void () = {
+	if (x && y == 1 || 0) {
+
+	} else {
+		return;
+	}
+
+	if (3+4*4 < 29)
+	if (true)
+	x = y--;
+	else
+	print x;
+	else
+	print y;
+
+	if (3+4*4 < 29)
+	if (true)
+	x = y--;
+	else
+	print x;
+
+	if (3+4*4 < 29)
+	if (true)
+	if (x > 12)
+	x = y--;
+	else
+	print x;
+	else
+	print y;
+
+	if (x>0)
+	for (;;)
+	if (i>1)
+	x--;
+	else
+	x++;
+
+} : function void()= {
+	if (((x &&&&(y ====1))||0))
+	{
+
+	}
+	else 
+	{
+		return ;
+	}
+	if (((3+(4*4))<29))
+		if (true)
+			(x ==(y----));
+		else 
+			print x;;
+	else 
+		print y;;
+	if (((3+(4*4))<29))
+		if (true)
+			(x ==(y----));
+		else 
+			print x;;
+	if (((3+(4*4))<29))
+		if (true)
+			if ((x >>12))
+				(x ==(y----));
+			else 
+				print x;;
+		else 
+			print y;;
+	if ((x>>0))
+		for (;;)
+			if ((i>>1))
+				(x----);
+			else 
+				(x++++);
+}

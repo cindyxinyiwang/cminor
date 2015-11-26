@@ -1,0 +1,7 @@
+// special printing
+
+printarray: function void ( a: array [] integer, size: integer ) = {
+	str: string = "hello \n world";
+	c: char = '\n';
+	a: char = '\t';
+}

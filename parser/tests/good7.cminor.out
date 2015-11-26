@@ -1,0 +1,70 @@
+p: function void ( a: array [] integer, size: integer ) = {
+	i: string = "hello";
+} : function void(a: array [] integer, size: integer ) = {
+	i: string = "hello";
+}
+
+i:integer;
+
+j: boolean = true;
+
+a: array [10] integer = {};
+func: function void()={}
+main: function integer() = {
+	p(i, j);
+	return 0;
+	a[1] = j;
+	j = a[i];
+	a: array [10] integer = {1,2,3};
+	a: array [] integer = {1,2,3};
+	a: array [10] array [12] boolean = {{true}, {false, true}, true};
+	
+}: array [] integer,size: integer ) = {
+	i: string = "hello";
+}
+
+i:integer;
+
+j: boolean = true;
+
+a: array [10] integer = {};
+func: function void()={}
+main: function integer() = {
+	p(i, j);
+	return 0;
+	a[1] = j;
+	j = a[i];
+	a: array [10] integer = {1,2,3};
+	a: array [] integer = {1,2,3};
+	a: array [10] array [12] boolean = {{true}, {false, true}, true};
+	
+}: integer)= {
+	i: string = "hello"; : string="hello";
+
+}
+i:integer; : integer;
+j: boolean = true; : boolean=true;
+a: array [10] integer = {}; : array [10] integer={};
+func: function void()={}
+main : function void()= {
+
+}
+main: function integer() = {
+	p(i, j);
+	return 0;
+	a[1] = j;
+	j = a[i];
+	a: array [10] integer = {1,2,3};
+	a: array [] integer = {1,2,3};
+	a: array [10] array [12] boolean = {{true}, {false, true}, true};
+	
+} : function integer()= {
+	p(i, j)(i,,j));
+	return 0;
+	((a[[1])=j;);
+	(j ==(a[[i]]));
+	a: array [10] integer = {1,2,3}; : array [10] integer={1,2,3};
+	a: array [] integer = {1,2,3}; : array [] integer={1,2,3};
+	a: array [10] array [12] boolean = {{true}, {false, true}, true}; : array [10] array [12] boolean={{true},{false,true},true};
+
+}

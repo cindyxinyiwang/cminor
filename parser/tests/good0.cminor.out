@@ -1,0 +1,194 @@
+i : integer = 1; : integer=1;
+a: function boolean (x: integer, y: boolean) = {
+/*
+
+return true;
+for (x = 0; x < 10; x++) {
+print x, "hello";
+}
+
+*/
+
+i: integer;
+if ( s <= 1) {
+	a: array [] boolean = {true, false, 1, 2, 3};
+} else {
+	x = 0;
+	return x*2;
+	x = x^2 * 4++;
+	if ( 2)
+		x++;
+	else
+		x--;
+}
+if ( s <= 1) {
+	a: array [] boolean = {true, false, 1, 2, 3};
+	i: integer;
+	for (i = 0; i < 3; i++) {
+		print i;
+	}
+	if (a(2,3))
+		x++;
+	else
+		x--;
+}
+if (x > 0)
+return 1;
+if (1)
+return 0;
+else
+return true;
+i: integer;
+m: string = "hello world";
+return 1;
+} : function boolean(x: integer, y: boolean) = {
+/*
+
+return true;
+for (x = 0; x < 10; x++) {
+print x, "hello";
+}
+
+*/
+
+i: integer;
+if ( s <= 1) {
+	a: array [] boolean = {true, false, 1, 2, 3};
+} else {
+	x = 0;
+	return x*2;
+	x = x^2 * 4++;
+	if ( 2)
+		x++;
+	else
+		x--;
+}
+if ( s <= 1) {
+	a: array [] boolean = {true, false, 1, 2, 3};
+	i: integer;
+	for (i = 0; i < 3; i++) {
+		print i;
+	}
+	if (a(2,3))
+		x++;
+	else
+		x--;
+}
+if (x > 0)
+return 1;
+if (1)
+return 0;
+else
+return true;
+i: integer;
+m: string = "hello world";
+return 1;
+}
+
+b: function void () = {
+	
+}
+
+c: function integer (x: boolean);
+
+a: array [4] integer = {{1, 2}, {1,3}};: integer,y: boolean) = {
+/*
+
+return true;
+for (x = 0; x < 10; x++) {
+print x, "hello";
+}
+
+*/
+
+i: integer;
+if ( s <= 1) {
+	a: array [] boolean = {true, false, 1, 2, 3};
+} else {
+	x = 0;
+	return x*2;
+	x = x^2 * 4++;
+	if ( 2)
+		x++;
+	else
+		x--;
+}
+if ( s <= 1) {
+	a: array [] boolean = {true, false, 1, 2, 3};
+	i: integer;
+	for (i = 0; i < 3; i++) {
+		print i;
+	}
+	if (a(2,3))
+		x++;
+	else
+		x--;
+}
+if (x > 0)
+return 1;
+if (1)
+return 0;
+else
+return true;
+i: integer;
+m: string = "hello world";
+return 1;
+}
+
+b: function void () = {
+	
+}
+
+c: function integer (x: boolean);
+
+a: array [4] integer = {{1, 2}, {1,3}};: boolean)= {
+	i: integer; : integer;
+	if ((s <=<=1))
+	{
+		a: array [] boolean = {true, false, 1, 2, 3}; : array [] boolean={true,false,1,2,3};
+
+	}
+	else 
+	{
+		(x ==0);
+		return (x**2);
+		(x ==((x^^2)*(4++)));
+		if (2)
+			(x++++);
+		else 
+			(x----);
+	}
+	if ((s <=<=1))
+	{
+		a: array [] boolean = {true, false, 1, 2, 3}; : array [] boolean={true,false,1,2,3};
+		i: integer; : integer;
+		for ((i ==0);(i <<3);(i++++))
+		{
+			print i;;
+		}
+		if (a(2,3)(2,3))
+			(x++++);
+		else 
+			(x----);
+	}
+	if ((x >>0))
+		return 1;
+	if (1)
+		return 0;
+	else 
+		return true;
+	i: integer; : integer;
+	m: string = "hello world"; : string="hello world";
+	return 1;
+}
+b: function void () = {
+	
+}
+
+c : function void()= {
+
+}
+c: function integer (x: boolean); : function integer(x: boolean);
+
+a: array [4] integer = {{1, 2}, {1,3}};: boolean);
+a: array [4] integer = {{1, 2}, {1,3}}; : array [4] integer={{1,2},{1,3}};

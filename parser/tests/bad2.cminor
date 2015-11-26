@@ -1,0 +1,6 @@
+// global statement
+
+i: integer = 1;
+j: integer = 3;
+
+k = i+j;

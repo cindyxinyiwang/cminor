@@ -1,0 +1,38 @@
+// statements
+
+b: function void () = {
+	// function declaration
+
+	a: function integer (x: integer, y: boolean) = {
+		print "hello", "world";
+		return y;
+	}
+	// declaration
+	
+	x: integer = 20;
+	// if statement
+
+	if (x > 0) {
+		m   = true;
+	} else {
+		x = x+1;
+		y++;
+	}
+	// if statement
+	
+	if (x*3 <= 12) {
+		print "this is awesome", x, 12;
+	}
+	// for 
+	for (x =0; x < 12; x++) {
+		m = m+n;
+	}
+	for (;;x++) {
+		m = m+1;
+	}
+	return true;
+	{
+		x = x+1;
+		y ++;
+	}
+}

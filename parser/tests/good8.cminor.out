@@ -1,0 +1,14 @@
+printarray: function void ( a: array [] integer, size: integer ) = {
+	str: string = "hello \n world";
+	c: char = '\n';
+	a: char = '\t';
+} : function void(a: array [] integer, size: integer ) = {
+	str: string = "hello \n world";
+	c: char = '\n';
+	a: char = '\t';
+}: array [] integer,: integer)= {
+	str: string = "hello \n world"; : string="hello \n world";
+	c: char = '\n'; : character='\n';
+	a: char = '\t'; : character='t';
+
+}

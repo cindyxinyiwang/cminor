@@ -1,0 +1,20 @@
+// for statement
+
+printarray: function void ( a: array [] integer, size: integer ) = {
+	i: integer;
+	for( i=0;i<size;i++) {
+		print a[i], "\n";
+	}
+	for (;;)
+	if (x>0)
+	x++;
+	else
+	x--;
+
+	if(m >= 2)
+	for (x=12; x< func(2,3); x++) 
+	for(y=0; y<13; y--)
+	x++;
+	for (;;) {}
+	return 0;
+}

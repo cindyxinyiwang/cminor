@@ -1,0 +1,10 @@
+// if else
+
+a: function integer () = {
+	i = i + j;
+	if (i > 0)
+		print i;
+		i++;
+	else
+		i--;
+}

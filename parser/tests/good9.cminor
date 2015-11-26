@@ -1,0 +1,6 @@
+// corner case
+
+printarray: function void ( a: array [] integer, size: integer ) = {
+	print;
+	return;
+}

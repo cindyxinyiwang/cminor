@@ -1,0 +1,3 @@
+// array
+
+myArray: array [] = {1,2,3};

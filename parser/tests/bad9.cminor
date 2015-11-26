@@ -1,0 +1,5 @@
+// function
+
+i: function boolean (i: integer) = {
+	i = 1;
+};

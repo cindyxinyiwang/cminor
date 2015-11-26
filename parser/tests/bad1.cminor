@@ -1,0 +1,6 @@
+// is it allowed???
+
+a: function integer () = {
+	i = i + j;
+	for (;;)
+}
