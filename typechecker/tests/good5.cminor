@@ -1,0 +1,16 @@
+// functions
+
+func1: function void () = {
+	return;
+
+}
+
+func2: function integer (i: integer, j: boolean) = {
+	// prototype allowed
+	func3: function void (i: integer, j:integer);
+	i = 1;
+	j = true;
+	return i;
+	func3(1, 1);
+	func1();
+}

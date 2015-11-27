@@ -1,0 +1,39 @@
+// statements
+
+m: boolean;
+b: function void () = {
+
+	// declaration
+	
+	x: integer = 20;
+	// if statement
+
+	if (x > 0) {
+		m   = true;
+	} else {
+		x = x+1;
+		x++;
+	}
+	// if statement
+
+	if (x*3 <= 12) {
+		print "this is awesome", x, 12;
+	}
+	
+	// for
+	
+	for (x =0; x < 12; x++) {
+		m = !m;
+	}
+	for (;x < 12;x++) {
+		m = !!m;
+	}
+	
+
+
+	{
+		x = x*1;
+		return;
+	}
+	
+}

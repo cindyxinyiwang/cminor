@@ -1,0 +1,10 @@
+// declare function inside function
+
+a: function void () = {
+
+	
+	b: function integer () = {
+		return 1;
+	}
+	print a, b, c;
+}

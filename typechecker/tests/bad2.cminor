@@ -1,0 +1,35 @@
+// expr type error
+
+func: function integer() = {
+	
+}
+
+a: function integer () = {
+	x: integer = 1;
+	
+	y: string = "hello hi";
+	a0: array[] integer = {1,2,3};
+	b: array[3] array [2] integer = {{1,2}, {3,4}, {5,6}};
+	z: char = 'b';
+	p: boolean = true;
+	q: boolean = false;
+
+	// array
+	c: array[3] array [2] array[1] integer = {{{true},{2}}, {{3},{4}}, {{5},{6}}};
+	wrong: array[] boolean;
+	wrong1: array[10] integer = {1,2};
+	x = a0[z];
+	
+	// integer
+	x1: integer = true;
+
+	// assign
+	a = func;
+
+	// == !=
+	c == b;
+	a != func;
+	a == func;
+	c != b;
+
+}

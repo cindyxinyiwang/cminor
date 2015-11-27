@@ -1,0 +1,30 @@
+// corner case
+size: integer = 1;
+
+arr: array [size] integer = {1};
+arr1: array[size] array [size+1] boolean;
+arr2: array[size] array [size+1] integer;
+
+printarray: function void ( a: array [] integer, size: integer ) = {
+	print;
+	return;
+}
+
+func: function void (a: array [] array [] integer, j: integer) ={
+	a[1] = {1,2};
+	return;
+}
+
+func1: function void (a: array [] array [2] integer, j: integer) ={
+	a[1] = {1,2};
+	return;
+}
+
+func2: function void (a: array [] array [] array [] integer, j: integer) ={
+	a[1][1] = {1,2};
+	return;
+}
+
+testFunc: function void () = {
+	func(arr2, 1);
+}

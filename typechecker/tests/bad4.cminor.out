@@ -1,0 +1,31 @@
+x resovles to param 0
+y resovles to param 1
+z resovles to local 0
+m resovles to param 0
+n resovles to param 1
+y resovles to param 2
+y resovles to param 2
+x resovles to global x
+m resovles to param 0
+y1 resovles to global y1
+x resovles to global x
+y resovles to param 2
+random resovles to global random
+random resovles to global random
+random resovles to global random
+x resovles to global x
+p resovles to param 0
+proto resovles to global proto
+func resovles to global func
+proto resovles to global proto
+proto resovles to global proto
+type error: cannot return a integer in a function(random) that returns array [3] integer
+type error: not enough variables to function call random
+type error: cannot pass variable of type boolean to function random
+type error: pass more variables to functions call random than needed
+type error: cannot return a array [3] integer in a function(func) that returns array [10] boolean
+type error: cannot assign void to a integer
+type error: cannot pass variable of type character to function proto
+type error: not enough variables to function call proto
+type error: cannot pass variable of type integer to function proto
+type error: cannot pass variable of type string to function proto

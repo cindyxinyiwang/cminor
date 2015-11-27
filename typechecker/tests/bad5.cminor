@@ -1,0 +1,11 @@
+// for statment
+
+a: function void () = {
+	i: integer;
+	for (i= 1;; i++) {
+		print i;
+	}
+	for (i= 0; i+1; i++) {
+		return;
+	}
+}

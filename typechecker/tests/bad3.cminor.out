@@ -1,0 +1,41 @@
+p resovles to local 7
+q resovles to local 8
+p resovles to local 7
+q resovles to local 8
+a0 resovles to local 4
+z resovles to local 6
+y resovles to local 2
+y1 resovles to local 3
+p resovles to local 7
+x resovles to local 0
+x resovles to local 0
+x1 resovles to local 1
+p resovles to local 7
+x resovles to local 0
+p resovles to local 7
+b resovles to local 5
+y resovles to local 2
+y resovles to local 2
+y1 resovles to local 3
+z resovles to local 6
+z resovles to local 6
+b resovles to local 5
+y1 resovles to local 3
+y resovles to local 2
+y resovles to local 2
+type error: cannot make greater than compare boolean with a boolean
+type error: cannot make less equal compare boolean with a boolean
+type error: cannot make less than compare array [3] integer with a character
+type error: cannot make greater equal than compare string with a string
+type error: cannot not a integer
+type error: cannot or integer with a integer
+type error: cannot and boolean with a integer
+type error: cannot not a array [3] array [2] integer
+type error: cannot add string to a string
+type error: cannot assign integer to a string
+type error: cannot multiply character to a integer
+type error: cannot assign integer to a character
+type error: cannot module array [3] array [2] integer to a integer
+type error: cannot expo string to a integer
+type error: cannot add a string
+type error: cannot decrease a string
