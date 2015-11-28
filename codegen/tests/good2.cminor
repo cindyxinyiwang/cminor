@@ -1,0 +1,20 @@
+// scope
+i:integer = 1;
+j:integer = i+1;
+k:boolean;
+a: function integer (i: integer, j:boolean) = {
+	return i*2;
+
+}
+b: function void () = {
+	x:integer = 1;
+	i:boolean = true;
+	j:boolean = i;
+	k = i;
+	m: array [4] integer = {1, 2, 3, 4};
+	x = a(x, j);
+	{
+		i: string = "hello";
+		j = i=="hello";
+	}
+}

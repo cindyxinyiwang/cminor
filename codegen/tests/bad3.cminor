@@ -1,0 +1,40 @@
+// expr type error 2
+
+func: function integer() = {
+	
+}
+
+a: function integer () = {
+	x: integer = 1;
+	x1: integer = 0;
+	
+	y: string = "hello hi";
+	y1: string = "hello";
+	a0: array[3] integer = {1,2,3};
+	b: array[3] array [2] integer = {{1,2}, {3,4}, {5,6}};
+	z: char = 'b';
+	p: boolean = true;
+	q: boolean = false;
+
+	// comparisons only on integers
+
+	p > q;
+	p <= q;
+	a0 < z;
+	y >= y1;
+
+	// boolean operator only on booleans
+	p = !x;
+	x || x1;
+	p && x;
+	p = !b;
+
+	// arithmetic only on integers
+	y = y + y1;
+	z = z * 1;
+	b%2;
+	y1^2;
+	y++;
+	y--;
+
+}

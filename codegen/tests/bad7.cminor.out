@@ -1,0 +1,6 @@
+x resovles to global x
+type error: cannot return a boolean in a function(a) that returns integer
+type error: cannot return a array [3] integer in a function(a) that returns integer
+type error: cannot return a string in a function(a) that returns integer
+type error: cannot return a void in a function(a) that returns integer
+type error: cannot return a character in a function(a) that returns integer

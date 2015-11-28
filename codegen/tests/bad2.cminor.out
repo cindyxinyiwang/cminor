@@ -1,0 +1,26 @@
+x resovles to local 0
+a0 resovles to local 2
+z resovles to local 4
+a resovles to global a
+func resovles to global func
+c resovles to local 7
+b resovles to local 3
+a resovles to global a
+func resovles to global func
+a resovles to global a
+func resovles to global func
+c resovles to local 7
+b resovles to local 3
+type error: array(a0) declaration must have a size value
+type error: array of element type array [1] boolean cannot have expression of type array [1] integer
+type error: array of element type array [2] array [1] boolean cannot have expression of type array [2] array [1] integer
+type error: array of element type array [2] array [1] boolean cannot have expression of type array [2] array [1] integer
+type error: cannot initialize variable (c) of type array [3] array [2] array [1] integer and assign it a array [3] array [2] array [1] boolean
+type error: array(wrong) declaration must have a size value
+type error: cannot use character as index to an array
+type error: cannot initialize variable (x1) of type integer and assign it a boolean
+type error: cannot assign function integer() to a function integer()
+type error: cannot compare equality array [3] array [2] array [1] integer with a array [3] array [2] integer
+type error: cannot compare non equality function integer() with a function integer()
+type error: cannot compare equality function integer() with a function integer()
+type error: cannot compare non equality array [3] array [2] array [1] integer with a array [3] array [2] integer

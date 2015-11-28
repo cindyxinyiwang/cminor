@@ -1,0 +1,20 @@
+i : integer = 1;
+j : integer = 10;
+
+main: function void () = {
+	i = j;
+	k: integer = 3;
+/*
+	k = 1+1;
+	i = k++;
+	i = k--;
+	//s: boolean = 2 > 4;
+	print 2 > 4;
+*/	
+	for (k=4;k>0; k--) {
+		i++;
+	}
+	print i;
+	
+}
+

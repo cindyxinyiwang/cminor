@@ -1,0 +1,24 @@
+i : integer = 1;
+j : integer = i;
+
+func: function integer (i: integer, j: integer) = {
+	i = i+1;
+	j = i+1;
+	j = true;
+	x: integer = 1;
+	y: boolean;
+	y = x;
+	j = x;
+	{
+		i: integer = j;
+		i > 0;
+	}
+}
+
+myFunc: function void (m: boolean, n: integer) = {
+	i = m +1;
+	n = m++;
+	m = func(1, 2);
+	myFunc(2, true);
+	func(i, j);
+}

@@ -1,0 +1,13 @@
+// return statement
+x: boolean = true;
+
+a: function integer () = {
+	arr: array [12] integer;
+
+	return x;
+	return 1;
+	return {1,2,3};
+	return "hello";
+	return;
+	return 'p';
+}
