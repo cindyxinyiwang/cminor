@@ -29,6 +29,8 @@ int main( int argc, char *argv[] )
 {
     decl_has_error = 0;
     decl_cur_label = 0;
+    expr_string_count = 0;
+
 
     int i = 0;
     for (i = 0; i < 16; i++) 
@@ -122,6 +124,16 @@ int main( int argc, char *argv[] )
           decl_resolve(parser_result, SYMBOL_GLOBAL);
           decl_typecheck(parser_result);
           decl_codegen(parser_result, out_file);
+          // append the string values
+          int cur_str_label = 0;
+          fprintf(out_file, ".data\n");
+          while (expr_string_literals) {
+            fprintf(out_file, ".LS%d:\n", cur_str_label);
+            fprintf(out_file, ".string %s\n", expr_string_literals->string_literal);
+            cur_str_label++;
+            expr_string_literals = expr_string_literals->next;
+          }
+
           exit(0);
         } else {
           exit(1);

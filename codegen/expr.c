@@ -287,10 +287,24 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			e->reg = register_alloc();
 			fprintf(file, "MOV %s, %s\n", symbol_code(e->symbol, decl_num_param), register_name(e->reg));
 			break;
-		case EXPR_STRING_VAL:
+		case EXPR_STRING_VAL: {
+			struct expr_strings *expr_str = malloc(sizeof(*expr_str));
+			expr_str->string_literal = e->string_literal;
+			expr_str->next = 0;
+			if (!expr_string_literals) {
+				expr_string_literals = expr_str;
+			} else {
+				struct expr_strings *temp = expr_string_literals;
+				while (temp->next) {
+					temp = temp->next;
+				}
+				temp->next = expr_str;
+			}
+			
 			e->reg = register_alloc();
-			fprintf(file, "MOV $%d, %s\n", e->string_literal, register_name(e->reg));
-			break;
+			fprintf(file, "MOV $.LS%d, %s\n", expr_string_count, register_name(e->reg));
+			expr_string_count++;
+			break; }
 		case EXPR_CHAR_VAL:
 			e->reg = register_alloc();
 			fprintf(file, "MOV $%d, %s\n", e->literal_value, register_name(e->reg));
@@ -347,12 +361,14 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 				register_free(vals_func->reg);
 				vals_func = vals_func->next;
 			}
-			printf("CALL %s\n", e->name);
-			// result is in %rax
-			e->reg = 0;
+			fprintf(file, "CALL %s\n", e->name);
+
 			// restore caller-saved registers
 			fprintf(file, "POPQ %%r11\n" );
 			fprintf(file, "POPQ %%r10\n" );
+			// result is in %rax
+			e->reg = register_alloc();
+			fprintf(file, "MOV %%rax, %s\n", register_name(e->reg));
 
 			break;
 		case EXPR_ASSIGN:

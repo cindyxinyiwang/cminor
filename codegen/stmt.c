@@ -45,7 +45,7 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                 decl_cur_label++;
                 second_label = decl_cur_label;
                 
-                fprintf(file, "CMP %s, $0\n", 
+                fprintf(file, "CMP $0, %s\n", 
                     register_name(s->init_expr->reg));
                 fprintf(file, "JE .L%d\n", first_label);
                 stmt_codegen( s->body, file, decl_num_param );
@@ -63,7 +63,7 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
 
                 fprintf(file, ".L%d:\n", first_label );
                 expr_codegen( s->expr, file, decl_num_param );
-                fprintf(file, "CMP $0, %s\n", register_name(s->expr->reg));
+                fprintf(file, "CMP $0,%s\n", register_name(s->expr->reg));
                 fprintf(file, "JE .L%d\n", second_label);
                 stmt_codegen( s->body, file, decl_num_param );
                 expr_codegen( s->next_expr, file, decl_num_param );
@@ -104,7 +104,7 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                             fprintf(file, "POPQ %%r11\n" );
                             break;
                         case TYPE_STRING:
-                            fprintf(file, "MOVQ %s, %%rdi\t # first argument\n", register_name(expr_list->literal_value));
+                            fprintf(file, "MOV %s, %%rdi\t # first argument\n", register_name(expr_list->reg));
                             fprintf(file, "MOVQ $0, %%rax\t #there are zero floating point args\n" );
                             fprintf(file, "PUSHQ %%r10\n" );
                             fprintf(file, "PUSHQ %%r11\n" );
@@ -135,7 +135,14 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                     register_name(s->init_expr->reg));
                 register_free(s->init_expr->reg);
                 // pushes!!!
-
+                fprintf(file, "############# call these before return\n" );
+                fprintf(file, "popq %%r15\n" );
+                fprintf(file, "popq %%r14\n" );
+                fprintf(file, "popq %%r13\n" );
+                fprintf(file, "popq %%r12\n" );
+                fprintf(file, "popq %%rbx\n" );
+                fprintf(file, "movq %%rbp, %%rsp\n" );
+                fprintf(file, "popq %%rbp\n" );
                 fprintf(file, "RET\n" );
                 break;
             case STMT_BLOCK:

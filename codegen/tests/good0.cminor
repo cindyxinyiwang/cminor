@@ -1,20 +1,38 @@
-i : integer = 1;
-j : integer = 10;
-
-main: function void () = {
-	i = j;
-	k: integer = 3;
 /*
-	k = 1+1;
-	i = k++;
-	i = k--;
-	//s: boolean = 2 > 4;
-	print 2 > 4;
-*/	
-	for (k=4;k>0; k--) {
-		i++;
+Display fibonnaci numbers from 0 to 45.
+This test exercises the ability of your
+compiler to call recursive functions.
+*/
+
+fib: function integer ( x: integer ) =
+{
+	if( x<1 ) {
+		//print 'i', '\n';
+		return 0;
+	} else {
+		if(x<2) {
+			//print 'j', '\n';
+			return 1;
+		} else {
+			//print 'k', '\n';
+			return fib(x-1) + fib(x-2);
+			//return fib(x-1);
+		}
 	}
-	print i;
-	
+}
+
+main: function integer ( ) =
+{
+	i: integer;
+
+	//print "Table of Fibonnacci Numbers\n";
+
+/*
+	for(i=0;i<4;i=i+1) {
+		print i, '\t', fib(i), '\n';
+	}
+*/
+	print fib(1);
+	return 0;
 }
 

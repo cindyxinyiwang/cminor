@@ -58,6 +58,13 @@ struct expr {
 	int reg;
 };
 
+struct expr_strings {
+	char* string_literal;
+	struct expr_strings *next;
+};
+struct expr_strings *expr_string_literals;
+int expr_string_count;
+
 struct expr * expr_create( expr_t kind, struct expr *left, struct expr *right );
 void expr_delete( struct expr * e );
 

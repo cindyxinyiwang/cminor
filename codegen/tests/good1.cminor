@@ -1,6 +1,6 @@
 // expressions
 
-b: function void () = {
+main: function void () = {
 	// basics
 
 	x: integer = 1;
