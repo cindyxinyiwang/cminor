@@ -25,9 +25,9 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			expr_codegen(e->left, file, decl_num_param);
 			expr_codegen(e->right, file, decl_num_param);
 			fprintf(file, "SUB %s, %s\n", 
-				register_name(e->left->reg),
-				register_name(e->right->reg));
-			e->reg = e->right->reg;
+				register_name(e->right->reg),
+				register_name(e->left->reg));
+			e->reg = e->left->reg;
 			register_free(e->left->reg);
 			break;
 		case EXPR_MUL:
@@ -58,7 +58,7 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 		case EXPR_POST_DECREASE:
 			// allocate register for post decrease expr
 			expr_codegen(e->left, file, decl_num_param);
-			e->reg = register_alloc();
+			e->reg = register_alloc(REGISTER_GENERAL);
 			fprintf(file, "MOV %s, %s\n", 
 				register_name(e->left->reg),
 				register_name(e->reg));
@@ -72,7 +72,7 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 		case EXPR_POST_INCREASE:
 			// allocate register for post increase expr
 			expr_codegen(e->left, file, decl_num_param);
-			e->reg = register_alloc();
+			e->reg = register_alloc(REGISTER_GENERAL);
 			fprintf(file, "MOV %s, %s\n", 
 				register_name(e->left->reg),
 				register_name(e->reg));
@@ -279,12 +279,12 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			register_free(e->left->reg);
 			break;		
 		case EXPR_INT_VAL:
-			e->reg = register_alloc();
+			e->reg = register_alloc(REGISTER_GENERAL);
 			fprintf(file, "MOV $%d, %s\n", e->literal_value, register_name(e->reg));
 			//printf("expr int allocated to %s\n", register_name(e->reg));
 			break;
 		case EXPR_NAME:
-			e->reg = register_alloc();
+			e->reg = register_alloc(REGISTER_GENERAL);
 			fprintf(file, "MOV %s, %s\n", symbol_code(e->symbol, decl_num_param), register_name(e->reg));
 			break;
 		case EXPR_STRING_VAL: {
@@ -301,21 +301,21 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 				temp->next = expr_str;
 			}
 			
-			e->reg = register_alloc();
+			e->reg = register_alloc(REGISTER_GENERAL);
 			fprintf(file, "MOV $.LS%d, %s\n", expr_string_count, register_name(e->reg));
 			expr_string_count++;
 			break; }
 		case EXPR_CHAR_VAL:
-			e->reg = register_alloc();
+			e->reg = register_alloc(REGISTER_GENERAL);
 			fprintf(file, "MOV $%d, %s\n", e->literal_value, register_name(e->reg));
 			break;
 		case EXPR_BOOLEAN_VAL:
 			if (e->literal_value) {
-				e->reg = register_alloc();
+				e->reg = register_alloc(REGISTER_GENERAL);
 				fprintf(file, "MOV $%d, %s\n", 1, register_name(e->reg));
 				break;
 			} else {
-				e->reg = register_alloc();
+				e->reg = register_alloc(REGISTER_GENERAL);
 				fprintf(file, "MOV $%d, %s\n", 0, register_name(e->reg));
 				break;
 			}
@@ -367,7 +367,7 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			fprintf(file, "POPQ %%r11\n" );
 			fprintf(file, "POPQ %%r10\n" );
 			// result is in %rax
-			e->reg = register_alloc();
+			e->reg = register_alloc(REGISTER_RETURN_VAL);
 			fprintf(file, "MOV %%rax, %s\n", register_name(e->reg));
 
 			break;

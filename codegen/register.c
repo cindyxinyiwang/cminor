@@ -42,10 +42,21 @@ const char *register_name( int r )
 	return "default";
 }
 
-int register_alloc()
+int register_alloc(register_kind_t reg_kind)
 {
-	//int i = 0;
-	for (int i = 0; i < 16; i++) {
+	int i = 0;
+	switch( reg_kind ) {
+		case REGISTER_RETURN_VAL:
+			i = 10;
+			break;
+		case REGISTER_GENERAL:
+			i = 0;
+			break;
+		case REGISTER_ONLY_NUM:
+			i = 8;
+			break;
+	}
+	for (; i < 16; i++) {
 		if (!reg_taken[i]) {
 			reg_taken[i] = 1;
 			return i;

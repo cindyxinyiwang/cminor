@@ -27,12 +27,12 @@ main: function integer ( ) =
 
 	//print "Table of Fibonnacci Numbers\n";
 
-/*
-	for(i=0;i<4;i=i+1) {
-		print i, '\t', fib(i), '\n';
+
+	for(i=0;i<10;i=i+1) {
+		print i, "th fib is: ", fib(i), '\n';
 	}
-*/
-	print fib(1);
+
+	//print fib(5);
 	return 0;
 }
 
