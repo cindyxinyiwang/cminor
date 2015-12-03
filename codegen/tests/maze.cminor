@@ -1,5 +1,4 @@
-/*
-This test program prints out a maze generated
+/*s test program prints out a maze generated
 by alternating slash and backslash randomly.
 It relies on the rand, srand, and time functions
 found in the C standard library.

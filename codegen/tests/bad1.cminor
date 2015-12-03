@@ -1,6 +1,0 @@
-// declare twice
-
-a: function integer () = {
-	i: integer = 1;
-	i: boolean = true;
-}

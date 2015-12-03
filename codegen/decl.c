@@ -81,7 +81,7 @@ void decl_codegen( struct decl *d, FILE *file )
 				}			
 				break;
 			case DECL_NO_INIT:
-				printf(";\n");
+				//printf(";\n");
 				break;
 			case DECL_CODE_INIT:
 				// number of params

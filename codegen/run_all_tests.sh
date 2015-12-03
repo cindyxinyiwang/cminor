@@ -2,7 +2,7 @@
 
 for testfile in tests/good*.cminor
 do
-	if ./cminor -typecheck $testfile > $testfile.out
+	if ./cminor -codegen $testfile > $testfile.out
 	then
 		echo "$testfile success (as expected)"
 	else
@@ -12,7 +12,7 @@ done
 
 for testfile in tests/bad*.cminor
 do
-	if ./cminor -typecheck $testfile > $testfile.out
+	if ./cminor -codegen $testfile > $testfile.out
 	then
 		echo "$testfile success (INCORRECT)"
 	else

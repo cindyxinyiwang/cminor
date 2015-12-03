@@ -61,7 +61,8 @@ int string_cmp(const char *str1, const char *str2  )
 {
 	if (strlen(str1) != strlen(str2) ) return 0;
 	int len = strlen(str1);
-	for (int i = 0; i < len; i++) {
+	int i = 0;
+	for (i = 0; i < len; i++) {
 		if (str1[i] != str2[i])
 			return 0;
 	}

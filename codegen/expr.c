@@ -21,14 +21,22 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			e->reg = e->right->reg;
 			register_free(e->left->reg);
 			break;
-		case EXPR_SUB:
-			expr_codegen(e->left, file, decl_num_param);
-			expr_codegen(e->right, file, decl_num_param);
-			fprintf(file, "SUB %s, %s\n", 
+		case EXPR_SUB:		
+			if (!e->left) {
+				expr_codegen(e->right, file, decl_num_param);
+				int neg_val = -(e->right->literal_value);
+				fprintf(file, "MOV $%d, %s\n", neg_val, register_name(e->right->reg));
+				e->reg = e->right->reg;
+			} else {
+				expr_codegen(e->left, file, decl_num_param);
+				expr_codegen(e->right, file, decl_num_param);
+				fprintf(file, "SUB %s, %s\n", 
 				register_name(e->right->reg),
 				register_name(e->left->reg));
-			e->reg = e->left->reg;
-			register_free(e->left->reg);
+				e->reg = e->left->reg;
+				register_free(e->right->reg);
+			}			
+			
 			break;
 		case EXPR_MUL:
 			expr_codegen(e->left, file, decl_num_param);
@@ -217,8 +225,21 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 		case EXPR_EQ:
 			expr_codegen(e->left, file, decl_num_param);
 			expr_codegen(e->right, file, decl_num_param);
-			fprintf(file, "CMP %s, %s\n", 
-				register_name(e->right->reg), register_name(e->left->reg));
+			if (e->left->kind == EXPR_STRING_VAL) {
+                fprintf(file, "MOV %s, %%rdi\t # first argument\n", register_name(e->left->reg));
+                fprintf(file, "MOV %s, %%rsi\t # first argument\n", register_name(e->right->reg));
+                fprintf(file, "MOVQ $0, %%rax\t #there are zero floating point args\n" );
+                fprintf(file, "PUSHQ %%r10\n" );
+                fprintf(file, "PUSHQ %%r11\n" );
+                fprintf(file, "CALL string_cmp\n" );
+                fprintf(file, "POPQ %%r10\n" );
+                fprintf(file, "POPQ %%r11\n" );	
+                fprintf(file, "CMP $1, %%rax\n");			
+			} else {
+				fprintf(file, "CMP %s, %s\n", 
+					register_name(e->right->reg), register_name(e->left->reg));				
+			}
+
 			decl_cur_label++;
 			end_label = decl_cur_label;
 			decl_cur_label++;
@@ -240,8 +261,20 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 		case EXPR_NEQ:
 			expr_codegen(e->left, file, decl_num_param);
 			expr_codegen(e->right, file, decl_num_param);
-			fprintf(file, "CMP %s, %s\n", 
-				register_name(e->right->reg), register_name(e->left->reg));
+			if (e->left->kind == EXPR_STRING_VAL) {
+                fprintf(file, "MOV %s, %%rdi\t # first argument\n", register_name(e->left->reg));
+                fprintf(file, "MOV %s, %%rsi\t # first argument\n", register_name(e->right->reg));
+                fprintf(file, "MOVQ $0, %%rax\t #there are zero floating point args\n" );
+                fprintf(file, "PUSHQ %%r10\n" );
+                fprintf(file, "PUSHQ %%r11\n" );
+                fprintf(file, "CALL string_cmp\n" );
+                fprintf(file, "POPQ %%r10\n" );
+                fprintf(file, "POPQ %%r11\n" );	
+                fprintf(file, "CMP $1, %%rax\n");			
+			} else {
+				fprintf(file, "CMP %s, %s\n", 
+					register_name(e->right->reg), register_name(e->left->reg));				
+			}
 			decl_cur_label++;
 			end_label = decl_cur_label;
 			decl_cur_label++;
@@ -613,7 +646,7 @@ struct type * expr_typecheck( struct expr *e ) {
 		case EXPR_SUB:
 			L = expr_typecheck(e->left);
 			R = expr_typecheck(e->right);
-			if ( !(L->kind == TYPE_INTEGER && L->kind == TYPE_INTEGER) || R->kind != TYPE_INTEGER) {
+			if ( !(L->kind == TYPE_INTEGER || L->kind == TYPE_VOID) || R->kind != TYPE_INTEGER) {
 				decl_has_error = 1;
 				printf("type error: cannot subtract ");
 				type_print(L);

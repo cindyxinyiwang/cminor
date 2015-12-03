@@ -14,7 +14,7 @@ const char *reg_names[16];
 int reg_taken[16];
 
 const char *register_name( int r );
-int register_alloc();
+int register_alloc(register_kind_t reg_kind);
 void register_free( int r );
 
 

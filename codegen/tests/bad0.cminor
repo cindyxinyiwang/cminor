@@ -1,8 +1,0 @@
-// not declared
-
-a: function integer () = {
-	//j:integer;
-	//i:integer;
-	i = i + j;
-}
-

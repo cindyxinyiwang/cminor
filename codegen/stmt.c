@@ -62,8 +62,16 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                 second_label = decl_cur_label;
 
                 fprintf(file, ".L%d:\n", first_label );
-                expr_codegen( s->expr, file, decl_num_param );
-                fprintf(file, "CMP $0,%s\n", register_name(s->expr->reg));
+                if (s->expr) {
+                    expr_codegen( s->expr, file, decl_num_param );
+                    fprintf(file, "CMP $0,%s\n", register_name(s->expr->reg));
+                } else {
+                    int reg = register_alloc(REGISTER_GENERAL);
+                    fprintf(file, "MOV $0, %s\n", register_name(reg));
+                    fprintf(file, "CMP $0, %s\n", register_name(reg));
+                    register_free(reg);
+                }
+                
                 fprintf(file, "JE .L%d\n", second_label);
                 stmt_codegen( s->body, file, decl_num_param );
                 expr_codegen( s->next_expr, file, decl_num_param );
@@ -126,7 +134,7 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                     }
                     register_free(expr_list->reg);
                     expr_list = expr_list -> next;
-                    if (expr_list) printf(",");
+                    //if (expr_list) printf(",");
                 }           
                 break;
             case STMT_RETURN:
@@ -149,7 +157,7 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                 stmt_codegen(s->body, file, decl_num_param);
                 break;
         }
-        if ((s->next && s->kind != STMT_DECL)) printf("\n");
+        //if ((s->next && s->kind != STMT_DECL)) printf("\n");
         s = s->next; 
     }
 }
@@ -223,7 +231,7 @@ void stmt_typecheck( struct stmt *s )
         case STMT_FOR:
             expr_typecheck(s->init_expr);
             T = expr_typecheck(s->expr);
-            if (T -> kind != TYPE_BOOLEAN) {
+            if ( T -> kind != TYPE_BOOLEAN && T -> kind != TYPE_VOID ) {
                 decl_has_error = 1;
                 printf("type error: for statement must have boolean expression\n");
             }
