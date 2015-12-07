@@ -315,6 +315,10 @@ stmt_unmatched : TOKEN_KEYWORD_IF TOKEN_LPAREN expr TOKEN_RPAREN stmt
 	{
 		$$ = stmt_create(STMT_IF_ELSE, 0, $3, 0, 0, $5, $7);
 	}
+	| TOKEN_KEYWORD_FOR TOKEN_LPAREN expr_opt TOKEN_SEMI expr_opt TOKEN_SEMI expr_opt TOKEN_RPAREN stmt_unmatched
+	{
+		$$ = stmt_create(STMT_FOR, 0, $3, $5, $7, $9, 0);
+	}
 	;
 
 expr_opt : /* empty */
