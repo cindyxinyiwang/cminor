@@ -1,39 +1,21 @@
-// statements
+/*
+Complex Boolean Expressions
+*/
 
-m: boolean;
-b: function void () = {
-
-	// declaration
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	i: boolean = true;
+	j: boolean = false;
+	k: boolean;
 	
-	x: integer = 20;
-	// if statement
+	k = !!!!i && i;
+	if (k == true) {
+		print "passed, result is ", k, '\n';
+	}
 
-	if (x > 0) {
-		m   = true;
-	} else {
-		x = x+1;
-		x++;
+	k = i&&j&&!j||i;
+	if (k == true) {
+		print "passed, result is ", k, '\n';
 	}
-	// if statement
-
-	if (x*3 <= 12) {
-		print "this is awesome", x, 12;
-	}
-	
-	// for
-	
-	for (x =0; x < 12; x++) {
-		m = !m;
-	}
-	for (;x < 12;x++) {
-		m = !!m;
-	}
-	
-
-
-	{
-		x = x*1;
-		return;
-	}
-	
+	return 0;
 }

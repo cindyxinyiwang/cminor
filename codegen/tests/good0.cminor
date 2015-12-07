@@ -1,31 +1,27 @@
 /*
-Display fibonnaci numbers from 0 to 45.
-This test exercises the ability of your
-compiler to call recursive functions.
+Arithmetic Expressions
 */
-
-fib: function integer ( x: integer ) =
-{
-	if( x<1 ) {
-		return 0;
-	} else {
-		if(x<2) {
-			return 1;
-		} else {
-			return fib(x-1) + fib(x-2);
-		}
-	}
-}
 
 main: function integer ( argc: integer, argv: array [] string ) =
 {
-	i: integer;
-
-	print "Table of Fibonnacci Numbers\n";
-
-	for(i=0;i<45;i=i+1) {
-		print i, "\t", fib(i), "\n";
+	i: integer = 5;
+	j: integer = 9;
+	k: integer;
+	
+	k = i+j;
+	if (k == 14) {
+		print "i + j passed, result is ", k, '\n';
+	} else {
+		print "i + j failed\n";
 	}
+	print i-j, ", and the correct result is -4\n";
+	print i*j, ", and the correct result is 45\n";
+	print i/j, ", and the correct result is 0\n";
+	print i%j, ", and the correct result is 5\n";
+	print 5^3, ", and the correct result is 125\n";
+	print i++, ", and the correct result is 5\n";
+	print i, ", and the correct result is 6\n";
 
+	print -j, ", and the correct result is -9\n";
 	return 0;
 }

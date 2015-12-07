@@ -1,32 +1,20 @@
 /*
-This test program prints out a maze generated
-by alternating slash and backslash randomly.
-It relies on the rand, srand, and time functions
-found in the C standard library.
+Boolean Expressions
 */
 
-rand: function integer ();
-srand: function void ( seed: integer );
-time: function integer ( zero: integer );
-
-main: function void () =
+main: function integer ( argc: integer, argv: array [] string ) =
 {
-	xsize: integer = 20;
-	ysize: integer = 20;
-
-	srand(time(0));
-
-	i: integer;
-	j: integer;
+	i: boolean = true;
+	j: boolean = false;
+	k: boolean;
 	
-	for(j=0;j<ysize;j++) {
-		for(i=0;i<xsize;i++) {
-			if(rand()%2==1) {
-				print '/';
-			} else {
-				print '\\';
-			}
-		}
-		print "\n";
-	}
+	print i&&j, ", and the correct result is false\n";
+	print i||j, ", and the correct result is true\n";
+	print !i, ", and the correct result is false\n";
+	print  !false, ", and the correct result is true\n";
+
+	k = i&&!j;
+	print k, ", and the correct result is true\n";
+
+	return 0;
 }

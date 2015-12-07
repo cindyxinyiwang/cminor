@@ -128,6 +128,7 @@ int main( int argc, char *argv[] )
           int cur_str_label = 0;
           fprintf(out_file, ".data\n");
           while (expr_string_literals) {
+            
             fprintf(out_file, ".LS%d:\n", cur_str_label);
             fprintf(out_file, ".string %s\n", expr_string_literals->string_literal);
             cur_str_label++;

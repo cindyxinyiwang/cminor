@@ -1,0 +1,14 @@
+/*
+functions
+*/
+add6: function integer (a: integer, b:integer, c: integer,
+		d:integer, e:integer, f:integer) = {
+	i: integer = a+b+c+d+e+f;
+	return i;
+}
+
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	print "1+2+3+4+5+6=", add6(1,2,3,4,5,6), '\n';
+	return 0;
+}

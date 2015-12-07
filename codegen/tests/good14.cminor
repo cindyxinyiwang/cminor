@@ -1,0 +1,18 @@
+/*
+void functions
+*/
+str_func: function string (a: integer, b:integer) = {
+	if (a > b)
+		return "first is greater than second\n";
+	else 
+		return "first is not greater than second\n";
+}
+
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	a: integer = 3;
+	b: integer = 1;
+	str: string;
+	str = str_func(a, b);
+	print str;
+}

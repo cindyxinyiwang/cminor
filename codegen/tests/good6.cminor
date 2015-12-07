@@ -1,18 +1,36 @@
-// for statement
-y: integer;
+/*
+comparison
+*/
 
-func: function integer(i:integer, j:integer) = {
-	return i+j;
-}
-
-printarray: function void ( a: array [] integer, size: integer ) = {
-	i: integer;
-	for( i=0;i<size;i++) {
-		print a[i], "\n";
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	if (30>29) {
+		print "> correct\n";	
 	}
-	x: integer;
-	for (x=12; x< func(2,3); x++) 
-	for(y=0; y<13; y--)
-	x++;
-	return ;
+	if (!(20>50)) {
+		print "> correct\n";
+	}
+
+	if (3<29) {
+		print "< correct\n";	
+	}
+	if (!(200<50)) {
+		print "< correct\n";
+	}
+
+	if (30>=30) {
+		print ">= correct\n";	
+	}
+	if (30>=5) {
+		print ">= correct\n";
+	}
+
+	if (320<=320) {
+		print "<= correct\n";	
+	}
+	if (!(200<=50)) {
+		print "<= correct\n";
+	}
+	
+	return 0;
 }

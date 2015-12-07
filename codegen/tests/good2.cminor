@@ -1,20 +1,45 @@
-// scope
-i:integer = 1;
-j:integer = i+1;
-k:boolean;
-a: function integer (i: integer, j:boolean) = {
-	return i*2;
+/*
+Complex arithmetic Expressions
+*/
 
-}
-b: function void () = {
-	x:integer = 1;
-	i:boolean = true;
-	j:boolean = i;
-	k = i;
-	m: array [4] integer = {1, 2, 3, 4};
-	x = a(x, j);
-	{
-		i: string = "hello";
-		j = i=="hello";
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	i: integer = 5;
+	j: integer = 9;
+	k: integer;
+	
+	k = i^2+j*i/2;
+	if (k == 47) {
+		print "passed, result is ", k, '\n';
+	} else {
+		print "failed\n";
 	}
+
+	k = 5%2 + 2*3*4%3 + k++;
+	if (k == 48) {
+		print "passed, result is ", k, '\n';
+	} else {
+		print "failed\n";
+	}
+	
+	k++;
+	if (k == 49) {
+		print "passed, result is ", k, '\n';
+	} else {
+		print "failed\n";
+	}
+
+	k = 2^3 +5*5 + i--;
+	if (k == 38) {
+		print "passed, result is ", k, '\n';
+	} else {
+		print "failed\n";
+	}
+
+	if (i == 4) {
+		print "passed, result is ", i, '\n';
+	} else {
+		print "failed\n";
+	}
+	return 0;
 }

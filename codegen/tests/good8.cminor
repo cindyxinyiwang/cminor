@@ -1,7 +1,16 @@
-// special printing
+/*
+complext Expressions
+*/
 
-printarray: function void ( a: array [] integer, size: integer ) = {
-	str: string = "hello \n world";
-	c: char = '\n';
-	a= {1,2,3};
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	i: boolean = true;
+	j: boolean = false;
+	k: boolean;
+	
+	k = i||j&&(!j)&&i&&(!j)||j;
+	if (k == true)
+		print "boolean arithmetic passed\n";
+	
+	return 0;
 }

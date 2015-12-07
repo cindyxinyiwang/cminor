@@ -1,30 +1,16 @@
-// arrays
+/*
+complext Expressions
+*/
 
-p: function void ( a: array [] integer, size: integer ) = {
-	i: string = "hello";
-}
-
-i:integer;
-
-j: boolean = true;
-
-a: array [2] integer;
-
-func: function void()={}
-
-main: function integer() = {
-	p(a, i);
-	return 0;
-	a[1] = i;
-	i = a[i];
-	a: array [3] integer = {1,2,3};
-	{
-		print a[1];
-		{
-			a: array [3] boolean = {true,false,true};
-			j = a[0];
-			func();
-		}
-	}
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	i: integer = 5;
+	j: integer = 9;
+	k: integer;
 	
+	k = i+j^2+ i*4/5%3 + 43*2 - i++ + j++;
+	if (k == 177)
+		print "integer arithmetic passed\n";
+	
+	return 0;
 }

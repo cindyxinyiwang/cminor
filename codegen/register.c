@@ -50,7 +50,7 @@ int register_alloc(register_kind_t reg_kind)
 			i = 10;
 			break;
 		case REGISTER_GENERAL:
-			i = 0;
+			i = 9;
 			break;
 		case REGISTER_ONLY_NUM:
 			i = 8;

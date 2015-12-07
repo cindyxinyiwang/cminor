@@ -1,5 +1,30 @@
-// corner case
+/*
+if statements
+*/
 
-main: function void () = {
-	print "hello", "world\n";
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	i: boolean = true;
+	j: boolean = false;
+	k: boolean;
+	
+	if (j)
+		print "wrong if\n";
+	else
+		if (j)
+			print "wrong if\n";
+		else
+			if (i)
+				print "correct if\n";
+			else
+				print "wrong if\n";
+	my_int: integer = 0;
+	if (45 > 20) {
+		my_int++;
+	} else {
+		my_int--;
+	}
+	if (my_int == 1)
+		print "correct if\n";
+	return 0;
 }

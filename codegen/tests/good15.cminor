@@ -1,0 +1,19 @@
+/*
+void functions
+*/
+
+func1: function integer (a: integer, b:integer) = {
+	
+	return a*b%10;
+}
+
+func2: function integer (i: integer) = {
+	k: integer = func1(i, 10);
+	p: integer = func1(i*2, i*3);
+	return k+p;
+}
+
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	print func2(12), "  ", func1(func1(1, 5), func1(4, 5)), '\n';
+}

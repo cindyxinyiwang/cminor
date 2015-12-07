@@ -1,33 +1,17 @@
-// declarations
+/*
+strings
+*/
 
-hello1: function integer () = {
-	print "hello world";
-}
+main: function integer ( argc: integer, argv: array [] string ) =
+{
 
-x: integer = 1;
-y: boolean = true;
-y1: boolean = false;
+	if ("hello world" == "hello world") {
+		print  "String equality passed\n";
+	}
+	str: string = "hello world!!!!";
+	print str, "\n";
+	str = "hi there!\n";
+	print str;
 
-// array [] only allowed in param
-random: function array [1] integer (x: integer, y: integer) = {
-	z: integer = x+y;
-	a: array [3] integer = {1, 2,3};
-	return a;
-}
-
-func: function array [10] integer (m: boolean, n: string, y: integer) = {
-	print m, n, y;
-
-	y = x;
-	m = y1 || x==y;
-
-	return random(1, 2);
-}
-a: array [10] integer = {1,2,3};
-
-proto: function void (i: integer, j: boolean, k: string, p: char, m: array [] integer);
-
-useProto: function void (p: integer, q:integer) = {
-	proto(p, true, "hello", 'h', a);
-	func(true, "hello", 1);
+	return 0;
 }

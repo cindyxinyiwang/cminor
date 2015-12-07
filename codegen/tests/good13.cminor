@@ -1,0 +1,14 @@
+/*
+void functions
+*/
+bool_func: function boolean (a: integer, b:integer) = {
+	return a > b;
+}
+
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	a: integer = 3;
+	b: integer = 1;
+	if (bool_func(a, b)) 
+		print a, " is greater than", b, '\n';
+}

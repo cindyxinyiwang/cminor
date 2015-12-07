@@ -1,16 +1,31 @@
-// functions
+/*
+== != expressions
+*/
 
-func1: function void () = {
-	return;
+main: function integer ( argc: integer, argv: array [] string ) =
+{
+	i: boolean = true;
+	j: boolean = false;
+	k: boolean;
 
-}
+	if (i != j) {
+		print "boolean != correct\n";	
+	}
 
-func2: function integer (i: integer, j: boolean) = {
-	// prototype allowed
-	func3: function void (i: integer, j:integer);
-	i = 1;
-	j = true;
-	return i;
-	func3(1, 1);
-	func1();
+	if (!i == j) 
+		print "boolean == correct\n";
+
+	if ("hello world hehe" != "hello world heha") 
+		print "string != correct\n";
+
+	if ("hehehehehh hs" == "hehehehehh hs")
+		print "string == correct\n";
+
+	if (120 == 120)
+		print "integer == correct\n";
+
+	if (23 != 12)
+		print "integer != correct\n";
+	
+	return 0;
 }

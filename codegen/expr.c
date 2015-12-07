@@ -25,8 +25,12 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			if (!e->left) {
 				expr_codegen(e->right, file, decl_num_param);
 				int neg_val = -(e->right->literal_value);
-				fprintf(file, "MOV $%d, %s\n", neg_val, register_name(e->right->reg));
-				e->reg = e->right->reg;
+				int temp_reg = register_alloc(REGISTER_GENERAL);
+				
+				fprintf(file, "MOV $0, %s\n", register_name(temp_reg));
+				fprintf(file, "SUB %s, %s\n", register_name(e->right->reg), register_name(temp_reg));
+				e->reg = temp_reg;
+				register_free(e->right->reg);
 			} else {
 				expr_codegen(e->left, file, decl_num_param);
 				expr_codegen(e->right, file, decl_num_param);
@@ -109,6 +113,8 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 		case EXPR_NOT:
 			expr_codegen(e->right, file, decl_num_param);
 			fprintf(file, "NOT %s\n", 
+				register_name(e->right->reg));
+			fprintf(file, "AND $1, %s\n",
 				register_name(e->right->reg));
 			e->reg = e->right->reg;
 			break;
@@ -322,6 +328,13 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			break;
 		case EXPR_STRING_VAL: {
 			struct expr_strings *expr_str = malloc(sizeof(*expr_str));
+			
+			char* str_literal = e->string_literal;
+			int length = strlen(str_literal);
+			if (str_literal[length-1] != '\"') {
+				str_literal[length-1] = '\0';
+			}
+		
 			expr_str->string_literal = e->string_literal;
 			expr_str->next = 0;
 			if (!expr_string_literals) {
@@ -354,7 +367,8 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			}
 			break;
 		case EXPR_ARRAY_VAL:
-			
+			printf("error: array not supported yet!\n");
+			exit(1);
 			break;
 		case EXPR_FUNCTION_VAL:
 			// caller saves regs
@@ -393,6 +407,7 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 				}
 				register_free(vals_func->reg);
 				vals_func = vals_func->next;
+				param_count++;
 			}
 			fprintf(file, "CALL %s\n", e->name);
 
@@ -412,7 +427,8 @@ void expr_codegen( struct expr *e, FILE *file, int decl_num_param )
 			register_free( e->right->reg );
 			break;
 		case EXPR_ARRAY_SUB:
-			
+			printf("error: array not supported yet\n");
+			exit(1);
 			break;
 	}
 }
@@ -541,6 +557,8 @@ struct expr * expr_create_string_literal( const char *str )
 	e->right = NULL;
 	e->next = NULL;
 	e->reg = 0;
+
+	//printf("str_lit: %s\n", e->string_literal);
 
 	return e;
 }

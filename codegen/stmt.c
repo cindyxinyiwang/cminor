@@ -53,6 +53,7 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                 fprintf(file, ".L%d:\n", first_label);
                 stmt_codegen( s->else_body, file, decl_num_param );
                 fprintf(file, ".L%d:\n", second_label);
+		register_free(s->init_expr->reg);
                 break;
             case STMT_FOR:
                 expr_codegen( s-> init_expr, file, decl_num_param );
@@ -77,6 +78,13 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                 expr_codegen( s->next_expr, file, decl_num_param );
                 fprintf(file, "JMP .L%d\n", first_label);
                 fprintf(file, ".L%d:\n", second_label);
+		
+		if (s->init_expr)
+			register_free( s->init_expr->reg );
+		if (s->expr)
+			register_free( s->expr->reg );
+		if (s->next_expr)
+			register_free( s->next_expr->reg );
                 break;
             case STMT_PRINT:
                 expr_list = s->init_expr;
@@ -138,10 +146,12 @@ void stmt_codegen( struct stmt *s, FILE *file, int decl_num_param )
                 }           
                 break;
             case STMT_RETURN:
-                expr_codegen( s->init_expr, file, decl_num_param );
-                fprintf(file, "MOV %s, %%rax\n", 
+		if (s->init_expr) {
+               	 expr_codegen( s->init_expr, file, decl_num_param );
+               	 fprintf(file, "MOV %s, %%rax\n", 
                     register_name(s->init_expr->reg));
-                register_free(s->init_expr->reg);
+              	  register_free(s->init_expr->reg);
+		}
                 // pushes!!!
                 fprintf(file, "############# call these before return\n" );
                 fprintf(file, "popq %%r15\n" );
